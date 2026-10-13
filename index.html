@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生物学｜まとめノート</title>
+<meta name="description" content="生きものは、環境との関係の中で生きている。分子から細胞、体、生態系、進化までの地図と流れ、セミの一生や野生動物の体、脳の進化、自然と心をめぐる自分の観察と問い。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f8f6;--surface:#fff;--ink:#20241f;--muted:#5f665d;--faint:#99a096;--line:#e0e4dd;--accent:#4f8a5b;--wash:#e9f2ea}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}}
+  :root[data-theme="dark"]{--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.95 "Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:46rem;margin:auto;padding:0 16px} @media(min-width:640px){.wrap{padding:0 24px}}
+  a{color:inherit}
+  .top{padding-top:24px}
+  .back{font-size:.75rem;color:var(--muted);text-decoration:none}.back:hover{color:var(--ink)}
+  header{padding:68px 0 44px;border-bottom:1px solid var(--line)}
+  .kicker{margin:0 0 16px;font-size:.7rem;letter-spacing:.24em;color:var(--accent);font-weight:700}
+  h1{font:600 clamp(2rem,5.6vw,3rem)/1.45 "Noto Serif JP",serif;margin:0 0 6px;letter-spacing:.04em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;margin:.1em 0 1.1em;opacity:.85}
+  .lead{margin:0;max-width:34em;color:var(--muted)}
+  .toc{display:flex;flex-wrap:wrap;gap:6px 16px;margin:24px 0 0;padding:0;list-style:none;font-size:.82rem}
+  .toc a{color:var(--accent);text-decoration:none}
+  section{padding:50px 0;border-bottom:1px solid var(--line)}
+  .sec-n{display:block;font-size:.7rem;letter-spacing:.2em;color:var(--accent);font-weight:700;margin-bottom:6px}
+  h2{font:600 1.5rem/1.5 "Noto Serif JP",serif;margin:0 0 14px;letter-spacing:.03em}
+  p{margin:0 0 16px}
+  .pull{margin:20px 0;padding:4px 0 4px 18px;border-left:2px solid var(--accent);font:500 1.1rem/1.8 "Noto Serif JP",serif}
+  .note-s{color:var(--faint);font-size:.84rem;margin:-6px 0 18px}
+  .map{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
+  @media(min-width:640px){.map{grid-template-columns:1fr 1fr}}
+  .map > div{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px}
+  .map small{display:block;font-size:.66rem;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:2px}
+  .map b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.05rem;margin-bottom:4px}
+  .map p{margin:0;font-size:.9rem;color:var(--muted)}
+  .map .q{display:block;margin-top:6px;font-size:.84rem;color:var(--ink)}
+  .map a.go{display:inline-block;margin-top:8px;font-size:.8rem;color:var(--accent);text-decoration:none}
+  .scale{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px;font-size:.84rem}
+  .scale span{padding:6px 12px;background:var(--wash);border-radius:999px}
+  .scale i{font-style:normal;color:var(--faint)}
+  ol.flow{list-style:none;margin:16px 0 0;padding:0;border-left:2px solid var(--line)}
+  ol.flow li{position:relative;padding:4px 0 14px 20px;font-size:.94rem}
+  ol.flow li::before{content:"";position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  ol.flow b{font-family:"Noto Serif JP",serif;font-weight:600;margin-right:8px}
+  ol.flow small{color:var(--faint);margin-right:8px}
+  ol.flow span{color:var(--muted)}
+  .tl{margin-top:8px;font-size:.88rem}.tl a{color:var(--accent)}
+  .qs{display:grid;gap:12px;margin-top:16px}
+  .qs article{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+  .qs h3{font:600 1.06rem/1.6 "Noto Serif JP",serif;margin:0 0 6px}
+  .qs p{margin:0 0 8px;font-size:.93rem;color:var(--muted)}
+  .qs .src{font-size:.78rem;color:var(--faint)}
+  .qs .src a{color:var(--accent);text-decoration:none;margin-right:10px}
+  .notes{border-top:1px solid var(--line)}
+  .notes a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+  .notes a:hover .ttl{color:var(--accent)}
+  .notes .idx{font-family:"Noto Serif JP",serif;color:var(--faint);font-size:.9rem}
+  .notes .cat{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint)}
+  .notes .ttl{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.12rem}
+  .notes .desc{display:block;font-size:.88rem;color:var(--muted);line-height:1.8;margin-top:4px}
+  .notes .arrow{color:var(--faint)}
+  .open{padding:24px;background:var(--wash);border-radius:4px}
+  .open h2{font-size:1.2rem}
+  .open ul{margin:10px 0 0;padding-left:1.2em}.open li{margin:0 0 8px}
+  footer{padding:34px 0 60px;color:var(--faint);font-size:.76rem}
+  footer .related{color:var(--muted);font-size:.86rem;margin-bottom:16px}
+  footer .related a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><a class="back" href="../">← m-note トップ</a></div>
+  <header>
+    <p class="kicker">BIOLOGY</p>
+    <h1>生物学</h1>
+    <p class="mn-tagline">生きものは、環境との関係の中で生きている。</p>
+    <p class="lead">4種類の文字で書かれた設計図から、一つひとつ違う生きものが生まれ、何十億年もかけて形を変えてきた。生物学は、生命のしくみと多様性、そしてその歴史である進化を扱う学問です。身近な生きものの観察と重ねながら、その地図を広げます。</p>
+    <ul class="toc"><li><a href="#what">生物学とは</a></li><li><a href="#map">分野の地図</a></li><li><a href="#flow">流れ</a></li><li><a href="#questions">自分の観察と問い</a></li><li><a href="#open">まだ答えが出ていない</a></li></ul>
+  </header>
+
+  <section id="what">
+    <span class="sec-n">01</span>
+    <h2>生物学とは</h2>
+    
+    
+    <p class="pull">生物学のあらゆることは、進化の光を当てなければ意味をなさない。<br><small style="font-size:.72rem;opacity:.7">― ドブジャンスキー（要旨）</small></p>
+    <p>生物学は、生きものがどうできていて、どう働き、どう増え、どう変わってきたかを調べる学問です。どれほど小さな仕組みも、長い進化の中で選び残されてきた結果として見ると、なぜそうなっているのかが見えてきます。</p>
+    <p>扱うものは、小さい順に積み重なっています。</p>
+    <div class="scale"><span>分子（DNA・タンパク質）</span><i>→</i><span>細胞</span><i>→</i><span>体</span><i>→</i><span>集団・生態系</span><i>→</i><span>進化（時間）</span></div>
+  </section>
+  <section id="map">
+    <span class="sec-n">02</span>
+    <h2>分野の地図</h2>
+    
+    <div class="map"><div><small>MOLECULAR BIOLOGY</small><b>分子 ― 遺伝子とDNA</b><p>A・C・G・Tの4文字で書かれた遺伝情報が、タンパク質をつくり、体を形づくる。</p><span class="q">問い：たった4文字から、なぜこれほど多様な生きものが生まれるのか</span></div><div><small>CELL BIOLOGY</small><b>細胞</b><p>すべての生きものの最小単位。神経細胞も、手の細胞と同じ膜と核とミトコンドリアを持つ、普通の細胞だった。</p><span class="q">問い：同じ設計図から、なぜ違う種類の細胞ができるのか</span></div><div><small>PHYSIOLOGY</small><b>体 ― 生理学と脳</b><p>体がどう働くか。呼吸、循環、免疫、そして情報を統合して世界を組み立てる脳。</p><span class="q">問い：体は、環境との関係の中でどう保たれているのか</span><a class="go" href="../brain/">脳のノートへ →</a></div><div><small>ECOLOGY</small><b>生態系</b><p>生きもの同士と、環境とのつながり。食べる・食べられる、すみ分け、生き残るための戦略。</p><span class="q">問い：それぞれの生き方は、どんな環境への答えなのか</span></div><div><small>EVOLUTION</small><b>進化</b><p>変異と自然選択で、生きものは何世代もかけて形を変える。人類もその流れの中にいる。</p><span class="q">問い：なぜ人間は、いまの体になったのか</span></div><div><small>BIOTECHNOLOGY</small><b>生命を読む・書く</b><p>ゲノムの解読、ゲノム編集、iPS細胞。生命の設計図を読むだけでなく、書き換えられる時代になった。</p><span class="q">問い：書き換えられるようになった生命と、どう向き合うのか</span></div></div>
+  </section>
+  <section id="flow">
+    <span class="sec-n">03</span>
+    <h2>流れ</h2>
+    
+    <ol class="flow"><li><small>1735</small><b>リンネの分類</b><span>生きものに、属と種の名前を付けて整理する。</span></li><li><small>1859</small><b>ダーウィン『種の起源』</b><span>自然選択による進化。</span></li><li><small>1865</small><b>メンデルの法則</b><span>遺伝には、規則がある。</span></li><li><small>1953</small><b>DNAの二重らせん</b><span>遺伝情報の正体が分かる。</span></li><li><small>2003</small><b>ヒトゲノムの解読完了</b><span>人の設計図を、すべて読む。</span></li><li><small>2006・2012</small><b>iPS細胞とゲノム編集</b><span>細胞を巻き戻し、遺伝子を書き換える。</span></li></ol><p class="tl"><a href="../history-timeline/#cat=earth,human,science">生命と人類の歴史を年表で見る →</a></p>
+  </section>
+  <section id="questions">
+    <span class="sec-n">04</span>
+    <h2>自分の観察と問い</h2>
+    
+    <div class="qs"><article><h3>土の中こそが、本編だった</h3><p>セミは何年も土の中で育ち、地上では繁殖だけに集中する。天敵の多い地上を避け、長い成長期を安全な場所に置くこと自体が、一つの生存戦略だった。うるさいと感じていた朝の声は、繁殖をかけた競争そのものだった。</p><div class="src"><a href="../musings/posts/p045.html">土の中こそが、本編だった →</a><a href="../musings/posts/p019.html">セミの一生と生存戦略 →</a></div></article><article><h3>摩耗するから、整う</h3><p>野生の馬の蹄は誰も削らないのに伸びすぎない。長く歩く暮らしそのものが手入れになっている。体はそれだけで完結せず、環境との関係の中で保たれていた。文明化は、その手入れを環境から自分の手に引き取ることでもあった。</p><div class="src"><a href="../musings/posts/p056.html">摩耗するから、整う →</a><a href="../musings/posts/p030.html">野生動物の爪と毛はなぜ手入れ不要なのか →</a></div></article><article><h3>新皮質は、理性の脳ではなかった</h3><p>新皮質が本能を支配する、という二層の図は正しくなかった。感情と理性は互いに影響し合い、脳は大きくなったというより、情報をつなぎ、まとめる力が高度になっていった。</p><div class="src"><a href="../musings/posts/p118.html">新皮質は、理性の脳ではなかった →</a><a href="../musings/posts/p123.html">つなぐ力と、つながない力 →</a></div></article><article><h3>景色ではなく、心を整える環境</h3><p>自然の中にいると、心が落ち着く。人は長い進化の中で自然と共に生きてきたから、その感覚が体に残っているのかもしれない。</p><div class="src"><a href="../musings/posts/p067.html">景色ではなく、心を整える環境 →</a></div></article></div>
+  </section>
+  <section id="open">
+    
+    
+    
+    <div class="open"><h2>まだ答えが出ていない</h2><ul><li>なぜ人間だけ、これほど体毛が少なくなり、汗をかき、長く走れるようになったのか</li><li>セミの種類ごとに地下で過ごす年数が違うのは、何が決めているのか</li><li>文明化によって要らなくなった体の機能は、ほかに何があるのか</li><li>脳の物理的な活動から、なぜ主観的な体験が生まれるのか</li></ul></div>
+  </section>
+  <footer>
+    <p class="related">あわせて読む：<a href="../brain/">脳</a> ・ <a href="../physics/">物理学</a> ・ <a href="../health-habits/">健康と習慣</a> ・ <a href="../history-timeline/#cat=earth,human">歴史（地球・生命・人類）</a></p>
+    <p>専門家ではない個人が、学びと問いを書きとめたノートです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="../">← m-note トップ</a></p>
+  </footer>
+</main>
+</body>
+</html>
