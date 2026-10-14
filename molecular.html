@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>遺伝子とDNA｜生物学</title>
+<meta name="description" content="4文字で書かれた、生命の設計図。DNAの二重らせん、遺伝子、DNAからRNAへ・タンパク質へという情報の流れ、遺伝暗号、変異とエピジェネティクス。DNA鑑定やmRNAワクチンなど身のまわりの遺伝子と、少ない要素から複雑が生まれる問い。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f8f6;--surface:#fff;--ink:#20241f;--muted:#5f665d;--faint:#99a096;--line:#e0e4dd;--accent:#4f8a5b;--wash:#e9f2ea}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}}
+  :root[data-theme="dark"]{--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.95 "Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:46rem;margin:auto;padding:0 16px} @media(min-width:640px){.wrap{padding:0 24px}}
+  a{color:inherit}
+  .top{padding-top:24px}
+  .back{font-size:.75rem;color:var(--muted);text-decoration:none}.back:hover{color:var(--ink)}
+  header{padding:68px 0 44px;border-bottom:1px solid var(--line)}
+  .kicker{margin:0 0 16px;font-size:.7rem;letter-spacing:.24em;color:var(--accent);font-weight:700}
+  h1{font:600 clamp(2rem,5.6vw,3rem)/1.45 "Noto Serif JP",serif;margin:0 0 6px;letter-spacing:.04em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;margin:.1em 0 1.1em;opacity:.85}
+  .lead{margin:0;max-width:34em;color:var(--muted)}
+  .toc{display:flex;flex-wrap:wrap;gap:6px 16px;margin:24px 0 0;padding:0;list-style:none;font-size:.82rem}
+  .toc a{color:var(--accent);text-decoration:none}
+  section{padding:50px 0;border-bottom:1px solid var(--line)}
+  .sec-n{display:block;font-size:.7rem;letter-spacing:.2em;color:var(--accent);font-weight:700;margin-bottom:6px}
+  h2{font:600 1.5rem/1.5 "Noto Serif JP",serif;margin:0 0 14px;letter-spacing:.03em}
+  p{margin:0 0 16px}
+  .pull{margin:20px 0;padding:4px 0 4px 18px;border-left:2px solid var(--accent);font:500 1.1rem/1.8 "Noto Serif JP",serif}
+  .note-s{color:var(--faint);font-size:.84rem;margin:-6px 0 18px}
+  .map{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
+  @media(min-width:640px){.map{grid-template-columns:1fr 1fr}}
+  .map > div{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px}
+  .map small{display:block;font-size:.66rem;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:2px}
+  .map b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.05rem;margin-bottom:4px}
+  .map p{margin:0;font-size:.9rem;color:var(--muted)}
+  .map .q{display:block;margin-top:6px;font-size:.84rem;color:var(--ink)}
+  .map a.go{display:inline-block;margin-top:8px;font-size:.8rem;color:var(--accent);text-decoration:none}
+  .scale{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px;font-size:.84rem}
+  .scale span{padding:6px 12px;background:var(--wash);border-radius:999px}
+  .scale i{font-style:normal;color:var(--faint)}
+  ol.flow{list-style:none;margin:16px 0 0;padding:0;border-left:2px solid var(--line)}
+  ol.flow li{position:relative;padding:4px 0 14px 20px;font-size:.94rem}
+  ol.flow li::before{content:"";position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  ol.flow b{font-family:"Noto Serif JP",serif;font-weight:600;margin-right:8px}
+  ol.flow small{color:var(--faint);margin-right:8px}
+  ol.flow span{color:var(--muted)}
+  .tl{margin-top:8px;font-size:.88rem}.tl a{color:var(--accent)}
+  .qs{display:grid;gap:12px;margin-top:16px}
+  .qs article{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+  .qs h3{font:600 1.06rem/1.6 "Noto Serif JP",serif;margin:0 0 6px}
+  .qs p{margin:0 0 8px;font-size:.93rem;color:var(--muted)}
+  .qs .src{font-size:.78rem;color:var(--faint)}
+  .qs .src a{color:var(--accent);text-decoration:none;margin-right:10px}
+  .notes{border-top:1px solid var(--line)}
+  .notes a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+  .notes a:hover .ttl{color:var(--accent)}
+  .notes .idx{font-family:"Noto Serif JP",serif;color:var(--faint);font-size:.9rem}
+  .notes .cat{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint)}
+  .notes .ttl{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.12rem}
+  .notes .desc{display:block;font-size:.88rem;color:var(--muted);line-height:1.8;margin-top:4px}
+  .notes .arrow{color:var(--faint)}
+  .open{padding:24px;background:var(--wash);border-radius:4px}
+  .open h2{font-size:1.2rem}
+  .open ul{margin:10px 0 0;padding-left:1.2em}.open li{margin:0 0 8px}
+  footer{padding:34px 0 60px;color:var(--faint);font-size:.76rem}
+  footer .related{color:var(--muted);font-size:.86rem;margin-bottom:16px}
+  footer .related a{color:var(--accent)}
+
+  .law{margin:14px 0 18px;padding:16px 20px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px}
+  .law b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;margin-bottom:2px}
+  .law .f{display:inline-block;margin:6px 0 2px;padding:2px 10px;background:var(--wash);border-radius:3px;font-family:ui-monospace,Menlo,monospace;font-size:.92rem}
+  .law p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+  ul.li{margin:0;padding-left:1.2em;font-size:.95rem;color:var(--muted)}
+  ul.li li{margin-bottom:8px} ul.li b{color:var(--ink)} ul.li a{color:var(--accent)}
+  .pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:.86rem}
+  .pager a{color:var(--muted);text-decoration:none}.pager a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><a class="back" href="./">← 生物学</a></div>
+  <header>
+    <p class="kicker">BIOLOGY · MOLECULAR BIOLOGY</p>
+    <h1>遺伝子とDNA</h1>
+    <p class="mn-tagline">4文字で書かれた、生命の設計図。</p>
+    <p class="lead">すべての生きものの細胞には、A・C・G・Tという4種類の文字で書かれた長い文章が入っています。それがDNA。この文章が読まれ、写され、タンパク質に翻訳されることで、体がつくられ、動いています。分子生物学は、生命を情報の流れとして捉える分野です。</p>
+    <ul class="toc"><li><a href="#what">遺伝子とDNAとは</a></li><li><a href="#core">基本の考え方</a></li><li><a href="#life">身のまわりの遺伝子</a></li><li><a href="#flow">流れ</a></li><li><a href="#link">ほかの分野とのつながり</a></li><li><a href="#mine">自分の問いとのつながり</a></li><li><a href="#open">まだ答えが出ていない</a></li></ul>
+  </header>
+
+  <section id="what">
+    <span class="sec-n">01</span>
+    <h2>遺伝子とDNAとは</h2>
+    <p class="pull">生命は、情報が物質になる仕組みだった。</p><p>DNAは二本の鎖がらせん状に組み合わさり、AとT、GとCが向かい合って結びついています。片方の鎖があれば、もう片方を写し取れる。これが、生きものが自分の設計図をコピーして次の世代へ渡せる理由です。</p><p>遺伝子は、そのDNAのうちタンパク質などの設計にあたる部分。人の遺伝子は約2万個と、思ったより多くありません。</p>
+  </section>
+  <section id="core">
+    <span class="sec-n">02</span>
+    <h2>基本の考え方</h2>
+    <div class="law"><b>二重らせん</b><span class="f">A–T / G–C</span><p>二本の鎖が、決まった相手とだけ組み合う。片方から、もう片方を正確に写せる。</p></div><div class="law"><b>情報の流れ</b><span class="f">DNA → RNA → タンパク質</span><p>設計図（DNA）を写し取り（RNA）、それを読んでタンパク質をつくる。</p></div><div class="law"><b>遺伝暗号</b><span class="f">3文字で1つのアミノ酸</span><p>4種類の文字を3つ並べた組み合わせで、20種類のアミノ酸を指定する。ほぼすべての生きもので共通。</p></div><div class="law"><b>変異</b><p>コピーのときに起きるわずかな誤り。病気の原因にもなるが、進化の材料にもなる。</p></div><div class="law"><b>エピジェネティクス</b><p>同じ設計図でも、どの部分を読むかは環境や経験で変わる。</p></div>
+  </section>
+  <section id="life">
+    <span class="sec-n">03</span>
+    <h2>身のまわりの遺伝子</h2>
+    <ul class="li"><li><b>DNA鑑定</b> ― 人によって少しずつ違うDNAの並びを比べている。</li><li><b>親子が似る</b> ― 設計図の半分ずつを、父と母から受け継いでいる。</li><li><b>一卵性の双子でも違いが出る</b> ― 同じ設計図でも、読まれ方（エピジェネティクス）が違ってくる。</li><li><b>mRNAワクチン</b> ― 体の中でウイルスの一部をつくらせる設計図（RNA）を届けている。</li></ul>
+  </section>
+  <section id="flow">
+    <span class="sec-n">04</span>
+    <h2>流れ</h2>
+    <ol class="flow"><li><small>1865</small><b>メンデルの法則</b><span>遺伝には規則がある。</span></li><li><small>1869</small><b>DNAの発見</b><span>細胞の核から、謎の物質が取り出される。</span></li><li><small>1944</small><b>遺伝の正体はDNA</b><span>遺伝情報を運ぶのはタンパク質ではなくDNAだった。</span></li><li><small>1953</small><b>二重らせん構造</b><span>形が分かったことで、コピーの仕組みが見えた。</span></li><li><small>1961</small><b>遺伝暗号の解読</b><span>3文字で1つのアミノ酸。</span></li><li><small>2003</small><b>ヒトゲノムの解読完了</b><span>人の設計図をすべて読む。</span></li></ol><p class="tl"><a href="../history-timeline/#cat=science">歴史の年表で見る →</a></p>
+  </section>
+  <section id="link">
+    <span class="sec-n">05</span>
+    <h2>ほかの分野とのつながり</h2>
+    <ul class="li"><li><b>数学</b> ― 4文字の組み合わせで情報を表すのは、<a href="../mathematics/computation.html">情報理論</a>そのもの。</li><li><b>細胞</b> ― <a href="cell.html">細胞</a>は、この設計図を読んで働く工場。</li></ul>
+  </section>
+  <section id="mine">
+    <span class="sec-n">06</span>
+    <h2>自分の問いとのつながり</h2>
+    <p class="pull">たった4種類の文字から、これほどの多様さが生まれる。</p><p>DNAはA・C・G・Tの4種類の組み合わせで、あれほど複雑な生命を生み出している。<a href="../musings/posts/p068.html">少ない要素から、複雑が生まれる</a>という仮説の、いちばん身近な例です。</p><p>物語より先に、世界を成り立たせる基本の原理をつくる。<a href="../musings/posts/p124.html">答えではなく、問いを残す</a>で惹かれた「シンプルな構造から複雑が生まれる仕組み」の、生命版でもあります。</p>
+  </section>
+  <section id="open">
+    
+    <h2>まだ答えが出ていない</h2>
+    <div class="open"><ul><li>人の遺伝子は約2万個しかないのに、なぜこれほど複雑な体と脳ができるのか</li><li>設計図に書かれていることと、経験で変わることの境目はどこにあるのか</li></ul></div>
+  </section>
+  <nav class="pager"><a href="./">← 生物学</a><a href="cell.html">細胞 →</a></nav>
+  <footer>
+    <p class="related">あわせて読む：<a href="./">生物学</a> ・ <a href="cell.html">細胞</a> ・ <a href="biotech.html">生命を読む・書く</a></p>
+    <p>専門家ではない個人が、学びと問いを書きとめたノートです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="./">← 生物学</a></p>
+  </footer>
+</main>
+</body>
+</html>

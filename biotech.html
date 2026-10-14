@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生命を読む・書く｜生物学</title>
+<meta name="description" content="生命の設計図を、読むだけでなく書ける時代へ。遺伝子組換え、PCR、ゲノム解読、ゲノム編集、iPS細胞、mRNAワクチン。PCR検査やインスリン製剤など身のまわりの生命科学と、書き換えられる生命とどう向き合うかという問い。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f8f6;--surface:#fff;--ink:#20241f;--muted:#5f665d;--faint:#99a096;--line:#e0e4dd;--accent:#4f8a5b;--wash:#e9f2ea}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}}
+  :root[data-theme="dark"]{--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.95 "Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:46rem;margin:auto;padding:0 16px} @media(min-width:640px){.wrap{padding:0 24px}}
+  a{color:inherit}
+  .top{padding-top:24px}
+  .back{font-size:.75rem;color:var(--muted);text-decoration:none}.back:hover{color:var(--ink)}
+  header{padding:68px 0 44px;border-bottom:1px solid var(--line)}
+  .kicker{margin:0 0 16px;font-size:.7rem;letter-spacing:.24em;color:var(--accent);font-weight:700}
+  h1{font:600 clamp(2rem,5.6vw,3rem)/1.45 "Noto Serif JP",serif;margin:0 0 6px;letter-spacing:.04em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;margin:.1em 0 1.1em;opacity:.85}
+  .lead{margin:0;max-width:34em;color:var(--muted)}
+  .toc{display:flex;flex-wrap:wrap;gap:6px 16px;margin:24px 0 0;padding:0;list-style:none;font-size:.82rem}
+  .toc a{color:var(--accent);text-decoration:none}
+  section{padding:50px 0;border-bottom:1px solid var(--line)}
+  .sec-n{display:block;font-size:.7rem;letter-spacing:.2em;color:var(--accent);font-weight:700;margin-bottom:6px}
+  h2{font:600 1.5rem/1.5 "Noto Serif JP",serif;margin:0 0 14px;letter-spacing:.03em}
+  p{margin:0 0 16px}
+  .pull{margin:20px 0;padding:4px 0 4px 18px;border-left:2px solid var(--accent);font:500 1.1rem/1.8 "Noto Serif JP",serif}
+  .note-s{color:var(--faint);font-size:.84rem;margin:-6px 0 18px}
+  .map{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
+  @media(min-width:640px){.map{grid-template-columns:1fr 1fr}}
+  .map > div{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px}
+  .map small{display:block;font-size:.66rem;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:2px}
+  .map b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.05rem;margin-bottom:4px}
+  .map p{margin:0;font-size:.9rem;color:var(--muted)}
+  .map .q{display:block;margin-top:6px;font-size:.84rem;color:var(--ink)}
+  .map a.go{display:inline-block;margin-top:8px;font-size:.8rem;color:var(--accent);text-decoration:none}
+  .scale{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px;font-size:.84rem}
+  .scale span{padding:6px 12px;background:var(--wash);border-radius:999px}
+  .scale i{font-style:normal;color:var(--faint)}
+  ol.flow{list-style:none;margin:16px 0 0;padding:0;border-left:2px solid var(--line)}
+  ol.flow li{position:relative;padding:4px 0 14px 20px;font-size:.94rem}
+  ol.flow li::before{content:"";position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  ol.flow b{font-family:"Noto Serif JP",serif;font-weight:600;margin-right:8px}
+  ol.flow small{color:var(--faint);margin-right:8px}
+  ol.flow span{color:var(--muted)}
+  .tl{margin-top:8px;font-size:.88rem}.tl a{color:var(--accent)}
+  .qs{display:grid;gap:12px;margin-top:16px}
+  .qs article{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+  .qs h3{font:600 1.06rem/1.6 "Noto Serif JP",serif;margin:0 0 6px}
+  .qs p{margin:0 0 8px;font-size:.93rem;color:var(--muted)}
+  .qs .src{font-size:.78rem;color:var(--faint)}
+  .qs .src a{color:var(--accent);text-decoration:none;margin-right:10px}
+  .notes{border-top:1px solid var(--line)}
+  .notes a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+  .notes a:hover .ttl{color:var(--accent)}
+  .notes .idx{font-family:"Noto Serif JP",serif;color:var(--faint);font-size:.9rem}
+  .notes .cat{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint)}
+  .notes .ttl{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.12rem}
+  .notes .desc{display:block;font-size:.88rem;color:var(--muted);line-height:1.8;margin-top:4px}
+  .notes .arrow{color:var(--faint)}
+  .open{padding:24px;background:var(--wash);border-radius:4px}
+  .open h2{font-size:1.2rem}
+  .open ul{margin:10px 0 0;padding-left:1.2em}.open li{margin:0 0 8px}
+  footer{padding:34px 0 60px;color:var(--faint);font-size:.76rem}
+  footer .related{color:var(--muted);font-size:.86rem;margin-bottom:16px}
+  footer .related a{color:var(--accent)}
+
+  .law{margin:14px 0 18px;padding:16px 20px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px}
+  .law b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;margin-bottom:2px}
+  .law .f{display:inline-block;margin:6px 0 2px;padding:2px 10px;background:var(--wash);border-radius:3px;font-family:ui-monospace,Menlo,monospace;font-size:.92rem}
+  .law p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+  ul.li{margin:0;padding-left:1.2em;font-size:.95rem;color:var(--muted)}
+  ul.li li{margin-bottom:8px} ul.li b{color:var(--ink)} ul.li a{color:var(--accent)}
+  .pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:.86rem}
+  .pager a{color:var(--muted);text-decoration:none}.pager a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><a class="back" href="./">← 生物学</a></div>
+  <header>
+    <p class="kicker">BIOLOGY · BIOTECHNOLOGY</p>
+    <h1>生命を読む・書く</h1>
+    <p class="mn-tagline">生命の設計図を、読むだけでなく書ける時代へ。</p>
+    <p class="lead">20世紀の後半、人は生命の設計図を読めるようになり、21世紀には、それを狙った場所で書き換えられるようになりました。病気の治療、食べ物、薬。生命科学は暮らしを大きく変えつつあります。同時に、どこまで書き換えてよいのかという、これまでになかった問いも生まれました。</p>
+    <ul class="toc"><li><a href="#what">生命を読む・書くとは</a></li><li><a href="#core">基本の考え方</a></li><li><a href="#life">身のまわりの生命科学</a></li><li><a href="#flow">流れ</a></li><li><a href="#link">ほかの分野とのつながり</a></li><li><a href="#mine">自分の問いとのつながり</a></li><li><a href="#open">まだ答えが出ていない</a></li></ul>
+  </header>
+
+  <section id="what">
+    <span class="sec-n">01</span>
+    <h2>生命を読む・書くとは</h2>
+    <p class="pull">読めるようになったら、書けるようになった。</p><p>DNAを増やす、読む、切り貼りする。この三つの技術がそろったことで、生命の設計図は実験室で扱えるものになりました。</p><p>その力は、使い方次第で人を救いもすれば、新しい不安も生みます。</p>
+  </section>
+  <section id="core">
+    <span class="sec-n">02</span>
+    <h2>基本の考え方</h2>
+    <div class="law"><b>遺伝子組換え</b><p>ある生きものの遺伝子を、別の生きものに入れて働かせる。</p></div><div class="law"><b>PCR</b><p>ごくわずかなDNAを、短時間で何百万倍にも増やす。</p></div><div class="law"><b>ゲノム解読</b><p>生きものの設計図をすべて読む。人のゲノムは2003年に読み終えられた。</p></div><div class="law"><b>ゲノム編集</b><p>DNAを狙った場所で切って書き換える（CRISPR）。</p></div><div class="law"><b>iPS細胞とmRNA</b><p>体の細胞を何にでもなれる状態に戻す技術と、設計図を届けて体内で薬をつくらせる技術。</p></div>
+  </section>
+  <section id="life">
+    <span class="sec-n">03</span>
+    <h2>身のまわりの生命科学</h2>
+    <ul class="li"><li><b>PCR検査</b> ― ウイルスのわずかな遺伝子を増やして見つけている。</li><li><b>糖尿病の薬</b> ― インスリンは、遺伝子組換えの菌につくらせている。</li><li><b>ゲノム編集の食品</b> ― 特定の性質を変えた魚や野菜が、すでに売られている。</li></ul>
+  </section>
+  <section id="flow">
+    <span class="sec-n">04</span>
+    <h2>流れ</h2>
+    <ol class="flow"><li><small>1973</small><b>遺伝子組換えの技術</b><span>DNAを切り貼りできるようになる。</span></li><li><small>1983</small><b>PCR</b><span>DNAを増やす。</span></li><li><small>2003</small><b>ヒトゲノムの解読完了</b><span>設計図を読み終える。</span></li><li><small>2006</small><b>iPS細胞</b><span>細胞の時計を巻き戻す。</span></li><li><small>2012</small><b>ゲノム編集（CRISPR）</b><span>狙った場所を書き換える。</span></li><li><small>2020</small><b>mRNAワクチン</b><span>設計図を届けて、体の中で薬をつくらせる。</span></li></ol><p class="tl"><a href="../history-timeline/#cat=medicine,science">歴史の年表で見る →</a></p>
+  </section>
+  <section id="link">
+    <span class="sec-n">05</span>
+    <h2>ほかの分野とのつながり</h2>
+    <ul class="li"><li><b>医学</b> ― <a href="../history-timeline/#cat=medicine">医学・感染症の歴史</a>を年表で。</li><li><b>哲学</b> ― 何をしてよいかは、<a href="../philosophy/">哲学</a>の倫理の問いでもある。</li></ul>
+  </section>
+  <section id="mine">
+    <span class="sec-n">06</span>
+    <h2>自分の問いとのつながり</h2>
+    <p class="pull">書き換えられるようになった生命と、どう向き合うのか。</p><p>生命の設計図を読むだけでなく書けるようになった。病気をなくせるなら、それは大きな希望です。けれど、どこまでが治療で、どこからが「つくり変え」なのか。その線は技術ではなく、私たちが決めなければなりません。</p><p>知ることそのものに価値がある、と自分は考えています。けれど知ることが、そのまま変える力になる時代では、知ったあとにどうするかも問われています。</p>
+  </section>
+  <section id="open">
+    
+    <h2>まだ答えが出ていない</h2>
+    <div class="open"><ul><li>人の遺伝子を書き換えることは、どこまで許されるのか</li><li>書き換えられた生命は、「自然」なのか</li></ul></div>
+  </section>
+  <nav class="pager"><a href="evolution.html">← 進化</a><a href="./">生物学 →</a></nav>
+  <footer>
+    <p class="related">あわせて読む：<a href="./">生物学</a> ・ <a href="molecular.html">遺伝子とDNA</a> ・ <a href="../philosophy/">哲学</a></p>
+    <p>専門家ではない個人が、学びと問いを書きとめたノートです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="./">← 生物学</a></p>
+  </footer>
+</main>
+</body>
+</html>

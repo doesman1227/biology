@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>体 ― 生理学｜生物学</title>
+<meta name="description" content="体は、自分を一定に保とうとしている。ホメオスタシス、神経と内分泌、循環と呼吸、免疫、代謝。汗や発熱、睡眠不足とHRVなど身のまわりの体の働きと、健康データや環境との関係をめぐる問い。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f8f6;--surface:#fff;--ink:#20241f;--muted:#5f665d;--faint:#99a096;--line:#e0e4dd;--accent:#4f8a5b;--wash:#e9f2ea}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}}
+  :root[data-theme="dark"]{--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.95 "Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:46rem;margin:auto;padding:0 16px} @media(min-width:640px){.wrap{padding:0 24px}}
+  a{color:inherit}
+  .top{padding-top:24px}
+  .back{font-size:.75rem;color:var(--muted);text-decoration:none}.back:hover{color:var(--ink)}
+  header{padding:68px 0 44px;border-bottom:1px solid var(--line)}
+  .kicker{margin:0 0 16px;font-size:.7rem;letter-spacing:.24em;color:var(--accent);font-weight:700}
+  h1{font:600 clamp(2rem,5.6vw,3rem)/1.45 "Noto Serif JP",serif;margin:0 0 6px;letter-spacing:.04em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;margin:.1em 0 1.1em;opacity:.85}
+  .lead{margin:0;max-width:34em;color:var(--muted)}
+  .toc{display:flex;flex-wrap:wrap;gap:6px 16px;margin:24px 0 0;padding:0;list-style:none;font-size:.82rem}
+  .toc a{color:var(--accent);text-decoration:none}
+  section{padding:50px 0;border-bottom:1px solid var(--line)}
+  .sec-n{display:block;font-size:.7rem;letter-spacing:.2em;color:var(--accent);font-weight:700;margin-bottom:6px}
+  h2{font:600 1.5rem/1.5 "Noto Serif JP",serif;margin:0 0 14px;letter-spacing:.03em}
+  p{margin:0 0 16px}
+  .pull{margin:20px 0;padding:4px 0 4px 18px;border-left:2px solid var(--accent);font:500 1.1rem/1.8 "Noto Serif JP",serif}
+  .note-s{color:var(--faint);font-size:.84rem;margin:-6px 0 18px}
+  .map{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
+  @media(min-width:640px){.map{grid-template-columns:1fr 1fr}}
+  .map > div{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px}
+  .map small{display:block;font-size:.66rem;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:2px}
+  .map b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.05rem;margin-bottom:4px}
+  .map p{margin:0;font-size:.9rem;color:var(--muted)}
+  .map .q{display:block;margin-top:6px;font-size:.84rem;color:var(--ink)}
+  .map a.go{display:inline-block;margin-top:8px;font-size:.8rem;color:var(--accent);text-decoration:none}
+  .scale{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px;font-size:.84rem}
+  .scale span{padding:6px 12px;background:var(--wash);border-radius:999px}
+  .scale i{font-style:normal;color:var(--faint)}
+  ol.flow{list-style:none;margin:16px 0 0;padding:0;border-left:2px solid var(--line)}
+  ol.flow li{position:relative;padding:4px 0 14px 20px;font-size:.94rem}
+  ol.flow li::before{content:"";position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  ol.flow b{font-family:"Noto Serif JP",serif;font-weight:600;margin-right:8px}
+  ol.flow small{color:var(--faint);margin-right:8px}
+  ol.flow span{color:var(--muted)}
+  .tl{margin-top:8px;font-size:.88rem}.tl a{color:var(--accent)}
+  .qs{display:grid;gap:12px;margin-top:16px}
+  .qs article{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+  .qs h3{font:600 1.06rem/1.6 "Noto Serif JP",serif;margin:0 0 6px}
+  .qs p{margin:0 0 8px;font-size:.93rem;color:var(--muted)}
+  .qs .src{font-size:.78rem;color:var(--faint)}
+  .qs .src a{color:var(--accent);text-decoration:none;margin-right:10px}
+  .notes{border-top:1px solid var(--line)}
+  .notes a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+  .notes a:hover .ttl{color:var(--accent)}
+  .notes .idx{font-family:"Noto Serif JP",serif;color:var(--faint);font-size:.9rem}
+  .notes .cat{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint)}
+  .notes .ttl{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.12rem}
+  .notes .desc{display:block;font-size:.88rem;color:var(--muted);line-height:1.8;margin-top:4px}
+  .notes .arrow{color:var(--faint)}
+  .open{padding:24px;background:var(--wash);border-radius:4px}
+  .open h2{font-size:1.2rem}
+  .open ul{margin:10px 0 0;padding-left:1.2em}.open li{margin:0 0 8px}
+  footer{padding:34px 0 60px;color:var(--faint);font-size:.76rem}
+  footer .related{color:var(--muted);font-size:.86rem;margin-bottom:16px}
+  footer .related a{color:var(--accent)}
+
+  .law{margin:14px 0 18px;padding:16px 20px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px}
+  .law b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;margin-bottom:2px}
+  .law .f{display:inline-block;margin:6px 0 2px;padding:2px 10px;background:var(--wash);border-radius:3px;font-family:ui-monospace,Menlo,monospace;font-size:.92rem}
+  .law p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+  ul.li{margin:0;padding-left:1.2em;font-size:.95rem;color:var(--muted)}
+  ul.li li{margin-bottom:8px} ul.li b{color:var(--ink)} ul.li a{color:var(--accent)}
+  .pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:.86rem}
+  .pager a{color:var(--muted);text-decoration:none}.pager a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><a class="back" href="./">← 生物学</a></div>
+  <header>
+    <p class="kicker">BIOLOGY · PHYSIOLOGY</p>
+    <h1>体 ― 生理学</h1>
+    <p class="mn-tagline">体は、自分を一定に保とうとしている。</p>
+    <p class="lead">外が暑くても寒くても、体温はほぼ37度に保たれる。食事をしてもしなくても、血液の中の糖の量は一定の範囲に収まる。生理学は、体がどう働いているかを調べる分野です。その中心にあるのは、変わり続ける環境の中で、自分を一定に保とうとする力でした。</p>
+    <ul class="toc"><li><a href="#what">生理学とは</a></li><li><a href="#core">基本の考え方</a></li><li><a href="#life">身のまわりの体</a></li><li><a href="#flow">流れ</a></li><li><a href="#link">ほかの分野とのつながり</a></li><li><a href="#mine">自分の問いとのつながり</a></li><li><a href="#open">まだ答えが出ていない</a></li></ul>
+  </header>
+
+  <section id="what">
+    <span class="sec-n">01</span>
+    <h2>生理学とは</h2>
+    <p class="pull">変わらないために、体はいつも動いている。</p><p>体は、神経・ホルモン・免疫などの仕組みが協力して、内側の状態を一定に保っています（ホメオスタシス）。</p><p>その調整は、意識しないうちに働いている。そして、その状態は数字として外から見えるようにもなりました。</p>
+  </section>
+  <section id="core">
+    <span class="sec-n">02</span>
+    <h2>基本の考え方</h2>
+    <div class="law"><b>ホメオスタシス</b><p>体温、血糖、血圧などを一定の範囲に保つ働き。ずれると、元に戻す仕組みが動く。</p></div><div class="law"><b>神経と内分泌</b><p>神経は速い連絡、ホルモンはゆっくり全身に届く連絡。自律神経は、意識しなくても心拍や消化を調整する。</p></div><div class="law"><b>循環と呼吸</b><p>心臓が血液を送り、肺で酸素を取り込んで、全身の細胞に届ける。</p></div><div class="law"><b>免疫</b><p>自分と自分でないものを見分け、入ってきた病原体を排除する。</p></div><div class="law"><b>代謝</b><p>食べたものからエネルギーを取り出し、体をつくり直す化学反応の全体。</p></div>
+  </section>
+  <section id="life">
+    <span class="sec-n">03</span>
+    <h2>身のまわりの体</h2>
+    <ul class="li"><li><b>汗</b> ― 体温が上がると、汗を蒸発させて熱を逃がす。</li><li><b>運動で心拍が上がる</b> ― 筋肉に多くの酸素を届けるため。</li><li><b>発熱</b> ― 免疫が病原体と戦いやすくするために、体温を上げている。</li><li><b>睡眠不足の朝、HRVが下がる</b> ― 自律神経のバランスが乱れ、回復が追いついていないサイン。</li></ul>
+  </section>
+  <section id="flow">
+    <span class="sec-n">04</span>
+    <h2>流れ</h2>
+    <ol class="flow"><li><small>2世紀</small><b>ガレノス</b><span>体の働きを、解剖と観察から説明しようとする。</span></li><li><small>1628</small><b>ハーヴェイの血液循環</b><span>血液は体の中をめぐっている。</span></li><li><small>19世紀後半</small><b>ベルナールの「内部環境」</b><span>体は内側の環境を一定に保っている。</span></li><li><small>1921</small><b>インスリンの発見</b><span>血糖を調整するホルモン。</span></li><li><small>1932</small><b>キャノン「ホメオスタシス」</b><span>一定に保つ働きに名前がつく。</span></li></ol><p class="tl"><a href="../history-timeline/#cat=medicine,science">歴史の年表で見る →</a></p>
+  </section>
+  <section id="link">
+    <span class="sec-n">05</span>
+    <h2>ほかの分野とのつながり</h2>
+    <ul class="li"><li><b>脳</b> ― 体の調整の司令塔は<a href="../brain/">脳</a>。</li><li><b>健康と習慣</b> ― 自分の体の状態を知り、回復を優先する実践は<a href="../health-habits/">健康と習慣</a>に。</li></ul>
+  </section>
+  <section id="mine">
+    <span class="sec-n">06</span>
+    <h2>自分の問いとのつながり</h2>
+    <p class="pull">体は、それだけで完結していない。</p><p>野生の馬の蹄は誰も削らないのに伸びすぎない。体は、環境との関係の中で保たれていた。<a href="../musings/posts/p056.html">摩耗するから、整う →</a></p><p>自分では元気だと思っていても、データを見ると疲れていることがある。体感と体の反応は、必ずしも一致しない。<a href="../musings/posts/p135.html">状態と、能力は別だった →</a></p>
+  </section>
+  <section id="open">
+    
+    <h2>まだ答えが出ていない</h2>
+    <div class="open"><ul><li>体感とデータが食い違ったとき、どちらを信じればいいのか</li><li>文明化で要らなくなった体の働きは、ほかに何があるのか</li></ul></div>
+  </section>
+  <nav class="pager"><a href="cell.html">← 細胞</a><a href="ecology.html">生態系 →</a></nav>
+  <footer>
+    <p class="related">あわせて読む：<a href="./">生物学</a> ・ <a href="../health-habits/">健康と習慣</a> ・ <a href="../brain/">脳</a></p>
+    <p>専門家ではない個人が、学びと問いを書きとめたノートです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="./">← 生物学</a></p>
+  </footer>
+</main>
+</body>
+</html>
