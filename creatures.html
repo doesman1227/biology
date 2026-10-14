@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生きもの図鑑｜生物学</title>
+<meta name="description" content="出会った生きものと、そこで気づいたこと。セミ、野生の馬、ネコ、ヒト、川の魚、苔の観察と問いを、生物学の分野とつなげて並べる図鑑。これから会いたい生きものも。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f8f6;--surface:#fff;--ink:#20241f;--muted:#5f665d;--faint:#99a096;--line:#e0e4dd;--accent:#4f8a5b;--wash:#e9f2ea}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}}
+  :root[data-theme="dark"]{--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#94c79e;--wash:#1b261d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.95 "Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:46rem;margin:auto;padding:0 16px} @media(min-width:640px){.wrap{padding:0 24px}}
+  a{color:inherit}
+  .top{padding-top:24px}
+  .back{font-size:.75rem;color:var(--muted);text-decoration:none}.back:hover{color:var(--ink)}
+  header{padding:68px 0 44px;border-bottom:1px solid var(--line)}
+  .kicker{margin:0 0 16px;font-size:.7rem;letter-spacing:.24em;color:var(--accent);font-weight:700}
+  h1{font:600 clamp(2rem,5.6vw,3rem)/1.45 "Noto Serif JP",serif;margin:0 0 6px;letter-spacing:.04em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;margin:.1em 0 1.1em;opacity:.85}
+  .lead{margin:0;max-width:34em;color:var(--muted)}
+  .toc{display:flex;flex-wrap:wrap;gap:6px 16px;margin:24px 0 0;padding:0;list-style:none;font-size:.82rem}
+  .toc a{color:var(--accent);text-decoration:none}
+  section{padding:50px 0;border-bottom:1px solid var(--line)}
+  .sec-n{display:block;font-size:.7rem;letter-spacing:.2em;color:var(--accent);font-weight:700;margin-bottom:6px}
+  h2{font:600 1.5rem/1.5 "Noto Serif JP",serif;margin:0 0 14px;letter-spacing:.03em}
+  p{margin:0 0 16px}
+  .pull{margin:20px 0;padding:4px 0 4px 18px;border-left:2px solid var(--accent);font:500 1.1rem/1.8 "Noto Serif JP",serif}
+  .note-s{color:var(--faint);font-size:.84rem;margin:-6px 0 18px}
+  .map{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
+  @media(min-width:640px){.map{grid-template-columns:1fr 1fr}}
+  .map > div{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px}
+  .map small{display:block;font-size:.66rem;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:2px}
+  .map b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.05rem;margin-bottom:4px}
+  .map p{margin:0;font-size:.9rem;color:var(--muted)}
+  .map .q{display:block;margin-top:6px;font-size:.84rem;color:var(--ink)}
+  .map a.go{display:inline-block;margin-top:8px;font-size:.8rem;color:var(--accent);text-decoration:none}
+  .scale{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px;font-size:.84rem}
+  .scale span{padding:6px 12px;background:var(--wash);border-radius:999px}
+  .scale i{font-style:normal;color:var(--faint)}
+  ol.flow{list-style:none;margin:16px 0 0;padding:0;border-left:2px solid var(--line)}
+  ol.flow li{position:relative;padding:4px 0 14px 20px;font-size:.94rem}
+  ol.flow li::before{content:"";position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  ol.flow b{font-family:"Noto Serif JP",serif;font-weight:600;margin-right:8px}
+  ol.flow small{color:var(--faint);margin-right:8px}
+  ol.flow span{color:var(--muted)}
+  .tl{margin-top:8px;font-size:.88rem}.tl a{color:var(--accent)}
+  .qs{display:grid;gap:12px;margin-top:16px}
+  .qs article{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+  .qs h3{font:600 1.06rem/1.6 "Noto Serif JP",serif;margin:0 0 6px}
+  .qs p{margin:0 0 8px;font-size:.93rem;color:var(--muted)}
+  .qs .src{font-size:.78rem;color:var(--faint)}
+  .qs .src a{color:var(--accent);text-decoration:none;margin-right:10px}
+  .notes{border-top:1px solid var(--line)}
+  .notes a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+  .notes a:hover .ttl{color:var(--accent)}
+  .notes .idx{font-family:"Noto Serif JP",serif;color:var(--faint);font-size:.9rem}
+  .notes .cat{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint)}
+  .notes .ttl{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.12rem}
+  .notes .desc{display:block;font-size:.88rem;color:var(--muted);line-height:1.8;margin-top:4px}
+  .notes .arrow{color:var(--faint)}
+  .open{padding:24px;background:var(--wash);border-radius:4px}
+  .open h2{font-size:1.2rem}
+  .open ul{margin:10px 0 0;padding-left:1.2em}.open li{margin:0 0 8px}
+  footer{padding:34px 0 60px;color:var(--faint);font-size:.76rem}
+  footer .related{color:var(--muted);font-size:.86rem;margin-bottom:16px}
+  footer .related a{color:var(--accent)}
+
+  .zukan{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+  @media(min-width:640px){.zukan{grid-template-columns:1fr 1fr}}
+  .card{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:6px}
+  .card .grp{display:inline-block;font-size:.66rem;letter-spacing:.14em;color:var(--accent);font-weight:700}
+  .card .when{font-size:.72rem;color:var(--faint);margin-left:8px}
+  .card h3{font:600 1.2rem/1.5 "Noto Serif JP",serif;margin:4px 0 8px}
+  .card .scene{font-family:"Noto Serif JP",serif;font-size:.95rem;margin:0 0 8px}
+  .card .ins{font-size:.9rem;color:var(--muted);margin:0 0 10px}
+  .card .qq{font-size:.86rem;margin:0 0 10px;padding-left:10px;border-left:2px solid var(--line)}
+  .card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+  .card .tags a{font-size:.74rem;padding:2px 10px;background:var(--wash);border-radius:999px;text-decoration:none;color:var(--ink)}
+  .card .src a{display:block;font-size:.76rem;color:var(--faint);text-decoration:none}
+  .card .src a:hover{color:var(--accent)}
+  .want{display:grid;gap:10px;margin-top:14px}
+  .want div{padding:12px 16px;border:1px dashed var(--line);border-radius:6px}
+  .want b{font-family:"Noto Serif JP",serif;font-weight:600}
+  .want p{margin:2px 0 0;font-size:.88rem;color:var(--muted)}
+  .want a{font-size:.74rem;color:var(--faint);text-decoration:none}
+  .pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:.86rem}
+  .pager a{color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><a class="back" href="./">← 生物学</a></div>
+  <header>
+    <p class="kicker">BIOLOGY · FIELD GUIDE</p>
+    <h1>生きもの図鑑</h1>
+    <p class="mn-tagline">出会った生きものと、そこで気づいたこと。</p>
+    <p class="lead">教科書の分類ではなく、自分が出会った順の図鑑です。朝のセミの声、川を泳ぐ魚、自分の体。一つひとつの生きものに出会ったときの場面と、気づいたこと、残った問いを並べています。生物学のどの分野とつながるかも添えて。</p>
+    <ul class="toc"><li><a href="#met">出会った生きもの</a></li><li><a href="#want">これから会いたい生きもの</a></li></ul>
+  </header>
+
+  <section id="met">
+    <span class="sec-n">01</span>
+    <h2>出会った生きもの</h2>
+    <div class="zukan" id="zukan"></div>
+  </section>
+
+  <section id="want">
+    <span class="sec-n">02</span>
+    <h2>これから会いたい生きもの</h2>
+    <div class="want" id="wantlist"></div>
+  </section>
+
+  <nav class="pager"><a href="./">← 生物学</a><a href="molecular.html">遺伝子とDNA →</a></nav>
+  <footer>
+    <p class="related">あわせて読む：<a href="./">生物学</a> ・ <a href="ecology.html">生態系</a> ・ <a href="evolution.html">進化</a> ・ <a href="../joy/">楽しみ方</a></p>
+    <p>専門家ではない個人が、出会った生きものと気づきを書きとめたノートです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="./">← 生物学</a></p>
+  </footer>
+</main>
+<script>
+// creatures.json を図鑑のカードに並べる。リンクは同じサイト内のものだけを出す
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const safeUrl = u => { if (!u) return null; try { const url = new URL(String(u), location.href); return (url.protocol === "http:" || url.protocol === "https:") && url.origin === location.origin ? url.href : null; } catch { return null; } };
+const link = (u, t, cls) => { const h = safeUrl(u); return h ? `<a${cls ? ` class="${cls}"` : ""} href="${esc(h)}">${esc(t)}</a>` : ""; };
+function render(d){
+  document.getElementById("zukan").innerHTML = (d.met || []).map(c => `
+    <article class="card">
+      <span class="grp">${esc(c.group)}</span><span class="when">${esc(c.when)}</span>
+      <h3>${esc(c.name)}</h3>
+      <p class="scene">${esc(c.scene)}</p>
+      <p class="ins">${esc(c.insight)}</p>
+      ${c.question ? `<p class="qq">問い：${esc(c.question)}</p>` : ""}
+      <div class="tags">${(c.fields || []).map(([f, l]) => link(f, l)).join("")}</div>
+      <div class="src">${(c.sources || []).map(([s, l]) => link(s, l + " →")).join("")}</div>
+    </article>`).join("") || '<p class="note-s">まだありません。</p>';
+  document.getElementById("wantlist").innerHTML = (d.want || []).map(w => `
+    <div><b>${esc(w.name)}</b><p>${esc(w.memo)}</p>${(w.sources || []).map(([s, l]) => link(s, l + " →")).join(" ")}</div>`).join("");
+}
+fetch("creatures.json").then(r => r.json()).then(render).catch(() => render({}));
+</script>
+</body>
+</html>
